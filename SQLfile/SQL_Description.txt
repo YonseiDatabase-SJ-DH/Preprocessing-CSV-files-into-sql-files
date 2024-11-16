@@ -1,0 +1,84 @@
+### synthetic_data.sql 파일 설명
+
+이 SQL 파일은 합성 데이터를 사용하여 데이터베이스에 `suicide_data`, `economic_data`, `social_data` 테이블을 생성하고 데이터를 삽입하는 스크립트입니다. 각 테이블은 자살률 분석을 위한 관련 데이터를 포함합니다.
+
+### 1. 테이블 구조
+
+#### 1.1 `suicide_data` 테이블
+----------------------------------------
+CREATE TABLE suicide_data (
+    year INTEGER,
+    country VARCHAR(50),
+    age_group VARCHAR(50),
+    gender VARCHAR(10),
+    suicide_rate FLOAT
+);
+----------------------------------------
+
+- year: 연도 (예: 2020).
+- country: 국가명 (예: South Korea).
+- age_group: 연령대 (예: 15-24).
+- gender: 성별 (Male, Female).
+- suicide_rate: 자살률 (실수형 데이터).
+
+#### 1.2 `economic_data` 테이블
+----------------------------------------
+CREATE TABLE economic_data (
+    year INTEGER,
+    country VARCHAR(50),
+    gdp_per_capita FLOAT,
+    unemployment_rate FLOAT
+);
+----------------------------------------
+
+- year: 연도.
+- country: 국가명.
+- gdp_per_capita: 1인당 GDP.
+- unemployment_rate: 실업률 (실수형 데이터).
+
+#### 1.3 `social_data` 테이블
+----------------------------------------
+CREATE TABLE social_data (
+    year INTEGER,
+    country VARCHAR(50),
+    internet_usage FLOAT,
+    education_index FLOAT
+);
+----------------------------------------
+
+- year: 연도.
+- country: 국가명.
+- internet_usage: 인터넷 사용률 (0-100 사이의 값).
+- education_index: 교육 지수 (0-1 사이의 값).
+
+### 2. 데이터 삽입
+
+#### 2.1 `suicide_data` 예시
+----------------------------------------
+INSERT INTO suicide_data VALUES (2020, 'South Korea', '15-24', 'Male', 20.1);
+INSERT INTO suicide_data VALUES (2020, 'South Korea', '25-34', 'Female', 15.5);
+----------------------------------------
+
+- 예시에서, 2020년 대한민국의 15-24세 남성 자살률이 20.1로 삽입되고, 25-34세 여성의 자살률이 15.5로 삽입되었습니다.
+
+#### 2.2 `economic_data` 예시
+----------------------------------------
+INSERT INTO economic_data VALUES (2020, 'South Korea', 32000, 4.5);
+INSERT INTO economic_data VALUES (2020, 'Japan', 40000, 2.5);
+----------------------------------------
+
+- 예시에서, 2020년 대한민국의 1인당 GDP는 32,000이고, 실업률은 4.5%로 삽입되었습니다.
+- 일본의 경우, 1인당 GDP는 40,000이고, 실업률은 2.5%입니다.
+
+#### 2.3 `social_data` 예시
+----------------------------------------
+INSERT INTO social_data VALUES (2020, 'South Korea', 96.5, 0.85);
+INSERT INTO social_data VALUES (2020, 'Japan', 94.3, 0.88);
+----------------------------------------
+
+- 예시에서, 2020년 대한민국의 인터넷 사용률은 96.5%이고, 교육 지수는 0.85입니다.
+- 일본의 경우, 인터넷 사용률은 94.3%이고, 교육 지수는 0.88입니다.
+
+### 3. 결론
+이 SQL 스크립트는 세 가지 주요 테이블을 생성하고 데이터를 삽입하여 자살률과 경제 및 사회적 지표 간의 관계를 분석하기 위한 기본적인 데이터를 제공합니다. 이를 통해 국가별, 연령대별, 성별 자살률과 경제적, 사회적 지표 간의 상관 관계를 분석할 수 있습니다.
+
