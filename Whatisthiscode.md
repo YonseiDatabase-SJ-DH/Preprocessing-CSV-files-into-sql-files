@@ -1,4 +1,78 @@
-### 📝 Python 코드 설명: CSV 파일을 MySQL용 SQL 파일로 변환 (비전공자용)
+# English
+# 📝 Python Code Explanation: Converting CSV Files to MySQL-Compatible SQL Files (For Non-Programmers)
+
+This explanation is designed for team members who may not be familiar with Python. It focuses on the **workflow** and the **purpose of each step** in the code.
+
+---
+
+## **Overall Workflow**
+
+The code reads a **synthetic data CSV file** that we created, then converts it into a **MySQL-compatible SQL file**. This process makes it easier to load data into MySQL for analysis.
+
+---
+
+## **1. Loading the CSV File**
+- The first step is to **read the CSV file**.
+- A CSV file is like an Excel sheet, structured with **rows** and **columns** of data.
+- We use a Python library called `Pandas` to read the data and store it in a table-like structure called a **DataFrame**.
+
+---
+
+## **2. Preparing the SQL File**
+- Next, the script prepares an **SQL file**.
+- This file will contain **SQL queries** that can be executed in a MySQL database.
+
+---
+
+## **3. Defining the Table Structure**
+- The code defines the structure of the **database table** to be used in MySQL.
+- A table is like an Excel sheet tab (or "sheet") where the data is stored.
+- The structure specifies the **column names** and their respective **data types**, such as:
+  - `year` as an **integer (INT)**, and `region` as a **string (VARCHAR)**.
+
+---
+
+## **4. Converting Data to SQL Queries**
+- Each **row** in the CSV file is then converted into an **SQL query**.
+- The script uses the `INSERT INTO` command to create queries that **add data to the table**.
+- It loops through the rows, converting each one into an `INSERT` query and saving it.
+- For example, data for **Seoul in 2010** would be converted into an SQL query for insertion.
+
+---
+
+## **5. Saving the SQL File**
+- The script saves all the SQL queries into a single file.
+- It first writes the table creation query and then appends the `INSERT` queries for each row of data.
+- This file can later be imported into a MySQL database.
+
+---
+
+## **6. Completing the SQL File Generation**
+- Finally, the script outputs a success message to indicate the SQL file has been created.
+- The resulting SQL file can now be imported and used in MySQL.
+
+---
+
+## **Purpose and Benefits of This Code**
+- This script **automatically converts synthetic data CSV files into SQL files**.
+- By using Python, the process is **fast and accurate**.
+- Once imported into MySQL, the SQL file allows us to easily analyze the data using queries.
+- This approach helps organize data more effectively and enables comprehensive analysis using **SQL commands**.
+
+---
+
+## **How to Use the SQL File in MySQL**
+1. Open MySQL and import the generated SQL file:
+   ```sql
+   SOURCE /path/to/synthetic_data.sql;
+   ```
+2. Once the data is added to the table, you can run various analysis queries, such as
+   ```sql
+   SELECT * FROM suicide_data LIMIT 10;
+   ```
+
+# Korean
+# 📝 Python 코드 설명: CSV 파일을 MySQL용 SQL 파일로 변환 (비전공자용)
 
 이 설명은 Python 코드를 잘 모르는 팀원들도 이해할 수 있도록, **코드의 흐름**과 **각 단계의 역할**을 중심으로 설명합니다.
 
